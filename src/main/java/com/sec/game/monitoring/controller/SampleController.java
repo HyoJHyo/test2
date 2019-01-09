@@ -1,11 +1,15 @@
 package com.sec.game.monitoring.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.sec.game.monitoring.model.User;
+import com.sec.game.monitoring.service.SampleService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,9 +18,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SampleController {
 
+    @Autowired
+    private SampleService sampleService;
+
     @RequestMapping(value="/sample")
     public ModelAndView sampleView ( HttpSession session, HttpServletRequest request)  {
         ModelAndView mv = new ModelAndView();
+
+        List<User> users = sampleService.getSampleData();
         mv.setViewName("sample");
         return mv;
     }
