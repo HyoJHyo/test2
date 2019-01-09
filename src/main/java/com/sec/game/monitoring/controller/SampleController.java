@@ -26,6 +26,8 @@ public class SampleController {
         ModelAndView mv = new ModelAndView();
 
         List<User> users = sampleService.getSampleData();
+        mv.addObject("users", users);
+
         mv.setViewName("sample");
         return mv;
     }
