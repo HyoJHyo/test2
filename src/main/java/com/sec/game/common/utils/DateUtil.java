@@ -1,4 +1,4 @@
-package com.joyful.kingdom.common.utils;
+package com.sec.game.common.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
