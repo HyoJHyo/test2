@@ -15,7 +15,7 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object obj) throws Exception {
 
-        logger.debug("Welcome {}", "Cloud Gaming !!! --- AuthLoginInterceptor");
+        logger.debug("Welcome {}", "Cloud Gaming !!! --- login Check !!");
         return true;
     }
 }
