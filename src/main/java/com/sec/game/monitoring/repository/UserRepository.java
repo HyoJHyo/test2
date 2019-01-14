@@ -1,4 +1,4 @@
-package com.sec.game.monitoring.dao;
+package com.sec.game.monitoring.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

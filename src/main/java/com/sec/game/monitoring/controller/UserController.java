@@ -2,6 +2,10 @@ package com.sec.game.monitoring.controller;
 
 import java.util.List;
 
+import com.sec.game.monitoring.dao.UserDao;
+import com.sec.game.monitoring.model.User;
+import com.sec.game.monitoring.repository.UserRepository;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,10 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.sec.game.monitoring.dao.UserDao;
-import com.sec.game.monitoring.dao.UserRepository;
-import com.sec.game.monitoring.model.User;
 
 @RestController
 @RequestMapping(value = "/user")

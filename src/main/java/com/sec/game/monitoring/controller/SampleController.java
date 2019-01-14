@@ -9,6 +9,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.sec.game.monitoring.model.User;
 import com.sec.game.monitoring.service.SampleService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SampleController {
+    private static final Logger LOG = LoggerFactory.getLogger(SampleController.class);
 
     @Autowired
     private SampleService sampleService;
@@ -27,6 +30,8 @@ public class SampleController {
 
         List<User> users = sampleService.getSampleData();
         mv.addObject("users", users);
+        
+        LOG.debug("sample {}", "Test");
 
         mv.setViewName("sample");
         return mv;
